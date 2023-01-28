@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 import './App.css';
-import { Footer, Header } from './src/components';
+import { Footer, Header } from './components';
 
 const AppLayout = () => {
   return (
