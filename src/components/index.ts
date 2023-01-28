@@ -1,3 +1,10 @@
 export { default as Header } from './Header';
 export { default as Body } from './Body';
 export { default as Footer } from './Footer';
+export { default as Search } from './Search';
+export { default as Address } from './Address';
+export { default as Offers } from './Offers';
+export { default as Help } from './Help';
+export { default as Profile } from './Profile';
+export { default as Checkout } from './Checkout';
+export { default as Title } from './Title';
