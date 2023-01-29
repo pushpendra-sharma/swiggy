@@ -4,6 +4,7 @@ import {
   Address,
   Body,
   Checkout,
+  Error,
   Help,
   Offers,
   Profile,
@@ -15,7 +16,7 @@ export const router = createBrowserRouter([
     path: '/',
     element: <AppLayout />,
     loader: appLoader,
-    errorElement: <h1>Some error</h1>,
+    errorElement: <Error />,
     children: [
       {
         path: '/',

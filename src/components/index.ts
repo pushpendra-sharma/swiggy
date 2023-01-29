@@ -8,3 +8,4 @@ export { default as Help } from './Help';
 export { default as Profile } from './Profile';
 export { default as Checkout } from './Checkout';
 export { default as Title } from './Title';
+export { default as Error } from './Error';
