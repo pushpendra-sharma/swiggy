@@ -2,6 +2,7 @@ import instagram from '../assets/instagram.webp';
 import twitter from '../assets/twitter.webp';
 import facebook from '../assets/facebook.webp';
 import pintrest from '../assets/pintrest.webp';
+import footer from '../assets/footer.webp';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -9,7 +10,7 @@ const Footer = () => {
   return (
     <footer className='bg-black pt-12 px-12'>
       <div className='md:mx-32 sm:mx-0 flex flex-col'>
-        <div className='flex flex-wrap gap-4 justify-between border-b-[1px] border-white py-4'>
+        <div className='flex flex-wrap gap-12 justify-between border-b-[1px] border-white py-4'>
           <div>
             <div className='text-gray'>COMPANY</div>
             <ul className='list-none text-white mt-4'>
@@ -35,11 +36,11 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className='flex gap-4 flex-col md:flex-row flex-nowrap justify-between text-white py-4'>
-          <div className='flex gap-4 justify-between'>
-            <div>Swiggy</div>
-            <div>&copy; {year} Swiggy</div>
+        <div className='flex flex-col gap-4 lg:flex-row flex-nowrap justify-between text-white py-4 lg:items-center'>
+          <div>
+            <img className='w-36' src={footer} alt='swiggy logo' />
           </div>
+          <div className='text-xl'>&copy; {year} Swiggy</div>
           <div className='flex gap-6'>
             <img
               className='w-6 hover:scale-110'
