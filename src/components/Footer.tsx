@@ -8,8 +8,8 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className='bg-black pt-12 px-12'>
-      <div className='md:mx-32 sm:mx-0 flex flex-col'>
+    <footer className='bg-black pt-12 px-4 md:px-8 lg:px-12'>
+      <div className='mx-0 md:mx-16 lg:mx-32 flex flex-col'>
         <div className='flex flex-wrap gap-12 justify-between border-b-[1px] border-white py-4'>
           <div>
             <div className='text-gray'>COMPANY</div>
