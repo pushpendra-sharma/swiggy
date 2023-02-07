@@ -3,15 +3,13 @@ import logo from '../assets/logo.webp';
 
 const Title = () => {
   return (
-    <div>
-      <Link to='/'>
-        <img
-          className='w-12 hover:scale-105'
-          src={logo}
-          alt='swiggy logo'
-          title='Swiggy'
-        />
-      </Link>
+    <div className='w-12 hidden sm:block'>
+      <img
+        className='w-full hover:scale-105'
+        src={logo}
+        alt='swiggy logo'
+        title='Swiggy'
+      />
     </div>
   );
 };
