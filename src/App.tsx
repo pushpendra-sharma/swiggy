@@ -17,11 +17,11 @@ const AppLayout = () => {
   }
 
   return (
-    <Fragment>
+    <div className='flex flex-col min-h-screen'>
       <Header />
       <Outlet />
       <Footer />
-    </Fragment>
+    </div>
   );
 };
 
