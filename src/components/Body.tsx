@@ -1,5 +1,11 @@
+import Carousel from './Carousel';
+
 const Body = () => {
-  return <h2>Body</h2>;
+  return (
+    <div className='pt-20'>
+      <Carousel />
+    </div>
+  );
 };
 
 export default Body;
