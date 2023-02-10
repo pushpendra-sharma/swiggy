@@ -8,7 +8,7 @@ import img6 from '../assets/carousel/img6.webp';
 const Carousel = () => {
   return (
     <div className='hidden lg:flex items-center bg-gray-dark mx-0 py-12 lg:px-28'>
-      <div className='relative h-80 max-w-full'>
+      <div className='relative h-64 max-w-full'>
         <div className='relative w-full'>
           <div className='overflow-hidden'>
             <div className='w-full transition-transform ease-in whitespace-nowrap'>
