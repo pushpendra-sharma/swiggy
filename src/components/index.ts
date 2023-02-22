@@ -9,3 +9,7 @@ export { default as Profile } from './Profile';
 export { default as Checkout } from './Checkout';
 export { default as Title } from './Title';
 export { default as Error } from './Error';
+export { default as Filters } from './Filters';
+export { default as Carousel } from './Carousel';
+export { default as Loader } from './Loader';
+export { default as RestaurantCard } from './RestaurantCard';
