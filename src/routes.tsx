@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import AppLayout, { appLoader } from './App';
+import App, { appLoader } from './App';
 import {
   Address,
   Body,
@@ -14,7 +14,7 @@ import {
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <AppLayout />,
+    element: <App />,
     loader: appLoader,
     errorElement: <Error />,
     children: [

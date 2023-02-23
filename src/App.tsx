@@ -1,8 +1,10 @@
 import { Fragment } from 'react';
+import { Provider } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import './App.css';
 import { Footer, Header } from './components';
 import { useOnline } from './hooks/useOnline';
+import { store } from './redux/store';
 
 const AppLayout = () => {
   const isOnline = useOnline();
@@ -17,7 +19,7 @@ const AppLayout = () => {
   }
 
   return (
-    <div className='flex flex-col min-h-screen'>
+    <div className="flex flex-col min-h-screen">
       <Header />
       <Outlet />
       <Footer />
@@ -25,6 +27,14 @@ const AppLayout = () => {
   );
 };
 
-export default AppLayout;
+const App = () => {
+  return (
+    <Provider store={store}>
+      <AppLayout />
+    </Provider>
+  );
+};
+
+export default App;
 
 export const appLoader = () => <h1>App loading...</h1>;
