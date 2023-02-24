@@ -1,13 +1,25 @@
 {
   "name": "swiggy",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.0", 
+  "description": "Swiggy - online food deliver app.",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pushpendra-Sharma/swiggy"
+  },
+  "author": "Pushpendra Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pushpendra-Sharma/swiggy/issues"
+  },
+  "homepage": "https://github.com/Pushpendra-Sharma/swiggy#readme",
+  
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "jest-environment-jsdom": "^29.4.3",
