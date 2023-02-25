@@ -15,7 +15,12 @@ const Footer = () => {
         <li className=''>
           <Link to='/'>
             <div className='flex flex-col items-center gap-[1px]'>
-              <img src={icon} alt='swiggy' className='w-6' />
+              <img
+                src={icon}
+                alt='swiggy logo'
+                className='w-6'
+                data-testid='logo'
+              />
               <span>Swiggy</span>
             </div>
           </Link>
@@ -82,7 +87,12 @@ const Footer = () => {
         </div>
         <div className='hidden gap-4 flex-nowrap justify-between text-white py-4 items-center sm:flex lg:flex-row'>
           <div>
-            <img className='w-36' src={footer} alt='swiggy logo' />
+            <img
+              className='w-36'
+              src={footer}
+              alt='swiggy logo'
+              data-testid='logo'
+            />
           </div>
           <div className='text-xl'>&copy; {year} Swiggy</div>
           <div className='flex gap-6'>

@@ -8,18 +8,20 @@ import { store } from './redux/store';
 
 const AppLayout = () => {
   const isOnline = useOnline();
-
+  
   if (!isOnline) {
     return (
       <Fragment>
-        <h1>Connection Error!</h1>
-        <h2>Please check your internet connection and try again.</h2>
+        <div data-testid='offline-app'>
+          <h1>Connection Error!</h1>
+          <h2>Please check your internet connection and try again.</h2>
+        </div>
       </Fragment>
     );
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div data-testid='online-app' className='flex flex-col min-h-screen'>
       <Header />
       <Outlet />
       <Footer />

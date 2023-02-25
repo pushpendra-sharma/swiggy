@@ -12,4 +12,6 @@ test('Footer', () => {
       </Provider>
     </StaticRouter>
   );
+  const logo = footer.getAllByTestId('logo');
+  expect(logo[0].src).toBe('http://localhost/dummy.png');
 });
