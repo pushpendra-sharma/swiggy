@@ -1,7 +1,7 @@
 module.exports = {
   clearMocks: true,
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/**', '!**/index.ts'],
+  collectCoverageFrom: ['src/**/**', '!**/index.ts', '!**/mocks/**'],
   coverageDirectory: 'coverage',
   coveragePathIgnorePatterns: ['\\\\node_modules\\\\', 'src/assets'],
   coverageReporters: ['json', 'text', 'lcov', 'clover'],
@@ -14,7 +14,10 @@ module.exports = {
     },
   },
   moduleNameMapper: {
-    "\\.(jpeg|png|webp|svg)":"../mocks/dummyImage.js"
+    '\\.(jpeg|png|webp|svg)': '../mocks/dummyImage.js',
   },
   testEnvironment: 'jsdom',
+  transform: {
+    '^.+\\.test.(ts|tsx)$': 'ts-jest',
+  },
 };
