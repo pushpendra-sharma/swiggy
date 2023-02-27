@@ -17,7 +17,4 @@ module.exports = {
     '\\.(jpeg|png|webp|svg)': '../mocks/dummyImage.js',
   },
   testEnvironment: 'jsdom',
-  transform: {
-    '^.+\\.test.(ts|tsx)$': 'ts-jest',
-  },
 };
