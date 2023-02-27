@@ -1,10 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import cartSlice from './features/cart/cartSlice';
+import { swiggyApi } from './api';
 
 export const store = configureStore({
   reducer: {
     cart: cartSlice,
+    [swiggyApi.reducerPath]: swiggyApi.reducer,
   },
+  // Adding the api middleware enables caching, invalidation, polling,
+  // and other useful features of `rtk-query`.
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware().concat(swiggyApi.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
