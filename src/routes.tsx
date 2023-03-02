@@ -8,6 +8,7 @@ import {
   Help,
   Offers,
   Profile,
+  RestaurantDetails,
   Search,
 } from './components';
 
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: 'checkout',
         element: <Checkout />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantDetails />,
       },
     ],
   },

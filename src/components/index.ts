@@ -13,3 +13,7 @@ export { default as Filters } from './Filters';
 export { default as Carousel } from './Carousel';
 export { default as Loader } from './Loader';
 export { default as RestaurantCard } from './RestaurantCard';
+export { default as RestaurantDetails } from './RestaurantDetails';
+export { default as Banner } from './Banner';
+export { default as Menu } from './Menu';
+export { default as VegOrNonVeg } from './VegOrNonVeg';
