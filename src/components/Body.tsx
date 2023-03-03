@@ -1,4 +1,4 @@
-import { Carousel, Filters, Loader, RestaurantCard } from '.';
+import { Carousel, Filters, Loader, RestaurantCard, ShimmerRestaurant } from '.';
 
 const Body = () => {
   return (
@@ -6,9 +6,10 @@ const Body = () => {
       <Carousel />
       <div className="mx-0 px-4 py-2 sm:mx-4 md:px-8 md:mx-8 lg:px-12 lg:mx-16">
         {/* <Filters /> */}
-        <div className="">
+        <div className="flex flex-col md:flex-row gap-4 md:flex-wrap">
           <RestaurantCard />
-          <Loader />
+          {/* <Loader /> */}
+          <ShimmerRestaurant />
         </div>
       </div>
     </div>

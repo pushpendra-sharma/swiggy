@@ -19,6 +19,7 @@ module.exports = {
         medium: '#3D4152',
         dark: '#171A29',
         ultra: '#282C3F',
+        shimmer: '#e5e7eb',
       },
       red: '#FF6161',
       white: '#FFFFFF',
