@@ -17,8 +17,8 @@ const Body = () => {
           {isSuccess && (
             <>
               {data.map((item, index) => (
-                <Link to={`restaurant/${item.data.id}`}>
-                  <RestaurantCard key={index} />
+                <Link to={`restaurant/${item.data.id}`} key={item.data.id}>
+                  <RestaurantCard data={item.data} type={item.type} />
                 </Link>
               ))}
             </>
