@@ -4,7 +4,7 @@ import Title from './Title';
 
 const Header = () => {
   return (
-    <header className='px-4 py-2 md:px-8 lg:px-12 fixed top-0 w-full z-10 bg-white shadow-sm'>
+    <header className='px-4 py-2 md:px-8 lg:px-12 fixed top-0 w-full z-10 bg-white shadow'>
       <div className='mx-0 sm:mx-4 md:mx-8 lg:mx-16 flex gap-4 items-center justify-between'>
         <Title />
         <Address />
