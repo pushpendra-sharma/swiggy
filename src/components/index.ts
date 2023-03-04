@@ -20,3 +20,4 @@ export { default as VegOrNonVeg } from './VegOrNonVeg';
 export { default as ShimmerRestaurant } from './ShimmerRestaurant';
 export { default as ShimmerMenu } from './ShimmerMenu';
 export { default as ShimmerBanner } from './ShimmerBanner';
+export { default as Rating } from './Rating';
