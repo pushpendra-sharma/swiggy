@@ -4,26 +4,12 @@ import {
   GET_ALL_RESTAURANT_URL,
   GET_RESTAURANT_DETAIL_URL,
 } from '../utils/constants';
-
-export interface Response {
-  statusCode: number;
-  data: {
-    cards: Array<Restaurant>;
-  };
-}
-export interface Restaurant {
-  id: string;
-  name: string;
-  city: string;
-  area: string;
-  avgRating: number;
-  avgRatingString: string;
-  costForTwo: number;
-  costForTwoMsg: string;
-  cusisines: string[];
-  isVeg: boolean;
-  cloudinaryImageId: string;
-}
+import {
+  GET_RESTAURANT_DETAILS_API_RESPONSE,
+  GET_RESTAURANT_LIST_API_RESPONSE,
+  RESTAURANT,
+  RESTAURANT_DETAILS,
+} from '../utils/types';
 
 export const swiggyApi = createApi({
   reducerPath: 'api',
@@ -35,14 +21,16 @@ export const swiggyApi = createApi({
     },
   }),
   endpoints: builder => ({
-    getAllRestaurants: builder.query<[], void>({
+    getAllRestaurants: builder.query<RESTAURANT[], void>({
       query: () => GET_ALL_RESTAURANT_URL,
-      transformResponse: response => response.data.cards[2].data.data.cards,
+      transformResponse: (response: GET_RESTAURANT_LIST_API_RESPONSE) =>
+        response.data.cards[2].data.data.cards,
       transformErrorResponse: response => response,
     }),
-    getRestaurantDetails: builder.query<Restaurant, string>({
+    getRestaurantDetails: builder.query<RESTAURANT_DETAILS, string>({
       query: (id: string) => GET_RESTAURANT_DETAIL_URL + id,
-      transformResponse: response => response.data,
+      transformResponse: (response: GET_RESTAURANT_DETAILS_API_RESPONSE) =>
+        response.data,
       transformErrorResponse: response => response,
     }),
   }),
