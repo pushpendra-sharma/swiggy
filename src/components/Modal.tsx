@@ -1,14 +1,10 @@
-interface ModalProps {
+type ModalProps = {
   title: string;
   description: string;
-  onClose: Function;
-}
+  onClose: () => void;
+};
 
 const Modal = ({ title, description, onClose }: ModalProps) => {
-  const handleClick = e => {
-    e.stopPropagation();
-  };
-
   return (
     <div
       onClick={onClose}
@@ -16,7 +12,9 @@ const Modal = ({ title, description, onClose }: ModalProps) => {
     >
       <div
         className='w-full sm:w-1/3 h-2/4 bg-white rounded-md shadow-md opacity-100 p-2 overflow-hidden flex flex-col mt-8'
-        onClick={handleClick}
+        onClick={e => {
+          e.stopPropagation();
+        }}
       >
         <div className='flex justify-end'>
           <button className='max-w-fit font-bold text-gray' onClick={onClose}>

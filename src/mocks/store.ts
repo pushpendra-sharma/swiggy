@@ -1,9 +1,5 @@
 import { RootState } from '../redux/store';
 
-const store: RootState = {
-  cart: {
-    items: [],
-  },
-};
+const store = {};
 
 export default store;

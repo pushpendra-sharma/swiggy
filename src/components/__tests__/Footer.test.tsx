@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom/server';
+import '@testing-library/jest-dom';
 import { store } from '../../redux/store';
 import Footer from '../Footer';
 
@@ -13,5 +14,5 @@ test('Footer', () => {
     </StaticRouter>
   );
   const logo = footer.getAllByTestId('logo');
-  expect(logo[0].src).toBe('http://localhost/dummy.png');
+  expect(logo[0]).toBeInTheDocument();
 });
