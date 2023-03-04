@@ -1,15 +1,8 @@
-export interface FOOD {
-  name: string;
-  price: number;
-  default: number;
-  id: string;
-  inStock: number;
-  isVeg: number;
-  variant_group_id: string;
-  order: number;
-}
+// import menu from '../mocks/menu.json';
+// export type MENU1 = typeof menu;
 
-export interface MENU {
+
+export interface MENU_ITEM {
   id: number;
   name: string;
   category: string;
@@ -19,59 +12,72 @@ export interface MENU {
   displayOrder: 0;
   price: number;
   final_price: number;
-  variants_new: {
-    exclude_list: [];
-    variant_groups: [
-      {
-        group_id: string;
-        name: 'Quantity';
-        variations: FOOD[];
-      }
-    ];
-  };
   restId: string;
 }
 
 export interface RESTAURANT {
-  type: string;
-  data: {
-    id: string;
-    name: string;
-    city: string;
-    area: string;
-    avgRating: number;
-    avgRatingString: string;
-    totalRatingsString: string;
-    costForTwo: number;
-    costForTwoMsg: string;
-    costForTwoString: string;
-    cusisines: string[];
-    veg: boolean;
-    cloudinaryImageId: string;
-    address: string;
-    locality: string;
+  id: string;
+  name: string;
+  city: string;
+  area: string;
+  avgRating: string;
+  avgRatingString: string;
+  totalRatings: string;
+  totalRatingsString: string;
+  costForTwo: number;
+  costForTwoMsg: string;
+  costForTwoString: string;
+  cuisines: string[];
+  veg: boolean;
+  cloudinaryImageId: string;
+  address: string;
+  locality: string;
+  deliveryTime: number;
+  slaString: string;
+  lastMileTravel: number;
+  lastMileTravelString: string;
+  aggregatedDiscountInfo: {
+    shortDescriptionList: { meta: string; discountType: string }[];
+  };
+  areaSlug: string;
+}
+
+export interface BANNER_DETAILS extends RESTAURANT {
+  sla: {
+    slaString: string;
+    lastMileDistanceString: string;
+    deliveryTime: number;
+  };
+  offerMeta: {
+    header: string;
+    offer_tag: string;
+    coupon_code: string;
+    description: string;
+  }[];
+  aggregatedDiscountInfo: {
+    heade: string;
+    shortDescriptionList: {
+      meta: string;
+      discountType: string;
+      operationType: string;
+    }[];
   };
 }
 
-export interface RESTAURANT_DETAILS {
-  type: string;
-  data: {
-    id: string;
-    name: string;
-    city: string;
-    area: string;
-    avgRating: number;
-    avgRatingString: string;
-    totalRatingsString: string;
-    costForTwo: number;
-    costForTwoMsg: string;
-    costForTwoString: string;
-    cusisines: string[];
-    veg: boolean;
-    cloudinaryImageId: string;
-    address: string;
-    locality: string;
-    menu: { items: MENU[] };
+export interface RESTAURANT_DETAILS extends BANNER_DETAILS {
+  menu: {
+    items: {};
+    widgets: {
+      name: string;
+      subTitle: string;
+      type: string;
+      entities: {
+        id: number;
+        type: string;
+        showImg: boolean;
+        showRibbon: boolean;
+      }[];
+    }[];
   };
 }
 
@@ -79,7 +85,10 @@ export interface GET_RESTAURANT_DETAILS_API_RESPONSE {
   statusCode: number;
   data: RESTAURANT_DETAILS;
 }
-
+export interface CARD {
+  type: string;
+  data: RESTAURANT;
+}
 export interface GET_RESTAURANT_LIST_API_RESPONSE {
   statusCode: number;
   data: {
@@ -92,7 +101,7 @@ export interface GET_RESTAURANT_LIST_API_RESPONSE {
           type: string;
           data: {
             totalOpenRestaurants: number;
-            cards: RESTAURANT[];
+            cards: CARD[];
           };
         };
       }

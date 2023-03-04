@@ -5,6 +5,7 @@ import {
   GET_RESTAURANT_DETAIL_URL,
 } from '../utils/constants';
 import {
+  CARD,
   GET_RESTAURANT_DETAILS_API_RESPONSE,
   GET_RESTAURANT_LIST_API_RESPONSE,
   RESTAURANT,
@@ -21,7 +22,7 @@ export const swiggyApi = createApi({
     },
   }),
   endpoints: builder => ({
-    getAllRestaurants: builder.query<RESTAURANT[], void>({
+    getAllRestaurants: builder.query<CARD[], void>({
       query: () => GET_ALL_RESTAURANT_URL,
       transformResponse: (response: GET_RESTAURANT_LIST_API_RESPONSE) =>
         response.data.cards[2].data.data.cards,
@@ -29,8 +30,9 @@ export const swiggyApi = createApi({
     }),
     getRestaurantDetails: builder.query<RESTAURANT_DETAILS, string>({
       query: (id: string) => GET_RESTAURANT_DETAIL_URL + id,
-      transformResponse: (response: GET_RESTAURANT_DETAILS_API_RESPONSE) =>
-        response.data,
+      transformResponse: (response: GET_RESTAURANT_DETAILS_API_RESPONSE) => {
+        return response.data;
+      },
       transformErrorResponse: response => response,
     }),
   }),
