@@ -1,7 +1,6 @@
 // import menu from '../mocks/menu.json';
 // export type MENU1 = typeof menu;
 
-
 export interface MENU_ITEM {
   id: number;
   name: string;
@@ -40,6 +39,7 @@ export interface RESTAURANT {
     shortDescriptionList: { meta: string; discountType: string }[];
   };
   areaSlug: string;
+  promoted: boolean;
 }
 
 export interface BANNER_DETAILS extends RESTAURANT {
