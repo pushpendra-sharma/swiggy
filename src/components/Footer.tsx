@@ -10,7 +10,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className='bg-white pt-2 px-4 mt-auto w-full z-10 shadow-inner sm:shadow-none sm:bg-black sm:pt-4 lg:pt-12 md:px-8 lg:px-12'>
+    <footer className='bg-white pt-2 px-4 mt-auto w-full z-10 shadow-inner fixed bottom-0 sm:static sm:shadow-none sm:bg-black sm:pt-4 lg:pt-12 md:px-8 lg:px-12'>
       <ul className='flex justify-between items-center text-[10px] font-medium text-gray-medium opacity-75 sm:hidden'>
         <li className=''>
           <Link to='/'>
@@ -22,14 +22,6 @@ const Footer = () => {
                 data-testid='logo'
               />
               <span>Swiggy</span>
-            </div>
-          </Link>
-        </li>
-        <li className=''>
-          <Link to='search'>
-            <div className='flex flex-col items-center gap-[1px]'>
-              <span className='material-symbols-outlined'>search</span>
-              <span>Search</span>
             </div>
           </Link>
         </li>
