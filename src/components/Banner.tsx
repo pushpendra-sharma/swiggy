@@ -1,4 +1,5 @@
 import { BANNER_DETAILS } from '../utils/types';
+import Rating from './Rating';
 
 const Banner = (props: BANNER_DETAILS) => {
   const {
@@ -33,13 +34,8 @@ const Banner = (props: BANNER_DETAILS) => {
           </div>
         </div>
         <div className='flex flex-col justify-around p-2 border-gray-light border-[1px] rounded-md text-center shadow'>
-          <div className='pb-2 text-green-dark flex justify-center items-center border-b-[1px] border-gray-light'>
-            <span className='material-symbols-outlined material-symbols-fill relative bottom-1'>
-              star
-            </span>
-            <span className='font-bold'>{avgRatingString}</span>
-          </div>
-          <span className='text-gray text-xs'>{totalRatingsString}</span>
+          <Rating rating={avgRating}/>
+          <span className='text-gray text-xs border-t border-gray-light pt-2'>{totalRatingsString}</span>
         </div>
       </div>
       <div className='flex gap-8'>
