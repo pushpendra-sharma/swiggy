@@ -1,9 +1,22 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel, RestaurantCard, ShimmerRestaurant } from '.';
-import { useGetAllRestaurantsQuery } from '../redux/api';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { fetchRestaurantList } from '../redux/features/restaurants/restaurantSlice';
 
 const Body = () => {
-  const { data, isLoading, error, isSuccess } = useGetAllRestaurantsQuery();
+  const {
+    data: { cards },
+    isLoading,
+    error,
+    isSuccess,
+  } = useAppSelector(state => state.restaurants);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRestaurantList());
+  }, []);
 
   return (
     <div className='my-20'>
@@ -12,7 +25,7 @@ const Body = () => {
         <div className='flex flex-col gap-8 md:flex-row md:flex-wrap'>
           {isSuccess && (
             <>
-              {data.map((item, index) => (
+              {cards.map((item, index) => (
                 <Link to={`restaurant/${item.data.id}`} key={item.data.id}>
                   <RestaurantCard data={item.data} type={item.type} />
                 </Link>
