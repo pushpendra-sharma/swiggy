@@ -20,16 +20,6 @@ const Header = () => {
             </Link>
           </li>
           <li className='hidden sm:inline'>
-            <Link to='offers'>
-              <div className='flex items-center gap-2 hover:text-orange'>
-                <span className='material-symbols-outlined font-medium'>
-                  percent
-                </span>
-                <span className='font-medium'>Offers</span>
-              </div>
-            </Link>
-          </li>
-          <li className='hidden sm:inline'>
             <Link to='support'>
               <div className='flex items-center gap-2 hover:text-orange'>
                 <span className='material-symbols-outlined font-medium'>

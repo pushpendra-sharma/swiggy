@@ -1,12 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App, { appLoader } from './App';
 import {
-  Address,
   Body,
   Checkout,
   Error,
   Help,
-  Offers,
   Profile,
   RestaurantDetails,
   Search,
@@ -28,14 +26,6 @@ export const router = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: 'address',
-        element: <Address />,
-      },
-      {
-        path: 'offers',
-        element: <Offers />,
-      },
-      {
         path: 'support',
         element: <Help />,
       },
@@ -48,7 +38,7 @@ export const router = createBrowserRouter([
         element: <Checkout />,
       },
       {
-        path: "/restaurant/:id",
+        path: '/restaurant/:id',
         element: <RestaurantDetails />,
       },
     ],
