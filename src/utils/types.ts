@@ -55,7 +55,7 @@ export interface BANNER_DETAILS extends RESTAURANT {
     description: string;
   }[];
   aggregatedDiscountInfo: {
-    heade: string;
+    header: string;
     shortDescriptionList: {
       meta: string;
       discountType: string;
@@ -92,19 +92,15 @@ export interface CARD {
 export interface GET_RESTAURANT_LIST_API_RESPONSE {
   statusCode: number;
   data: {
-    cards: [
-      Object,
-      Object,
-      {
-        cardType: string;
+    cards: {
+      cardType: string;
+      data: {
+        type: string;
         data: {
-          type: string;
-          data: {
-            totalOpenRestaurants: number;
-            cards: CARD[];
-          };
+          totalOpenRestaurants: number;
+          cards: CARD[];
         };
-      }
-    ];
+      };
+    }[];
   };
 }

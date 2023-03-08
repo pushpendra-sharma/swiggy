@@ -1,12 +1,22 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useGetRestaurantDetailsQuery } from '../redux/api';
+import { fetchRestaurantDetails } from '../redux/features/restaurantDetails/restaurantDetailsSlice';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { MENU_ITEM, RESTAURANT_DETAILS } from '../utils/types';
 import { Banner, Menu, ShimmerMenu, ShimmerBanner } from './';
 
 const RestaurantDetails = () => {
   const { id = '' } = useParams();
-  const { data, isLoading, error, isSuccess } =
-    useGetRestaurantDetailsQuery(id);
+
+  const { data, isLoading, error, isSuccess } = useAppSelector(
+    state => state.restaurantDetails
+  );
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRestaurantDetails(id));
+  }, []);
 
   let itemsArray: MENU_ITEM[] = [];
 
@@ -27,17 +37,13 @@ const RestaurantDetails = () => {
         </div>
       )}
       {isSuccess && (
-        <>
-          <div className='flex flex-col items-stretch'>
-            <Banner {...data} />
-            <span className='text-lg text-gray-dark font-semibold p-4 my-4'>
-              Super Saver Combos (23)
-            </span>
-            {itemsArray.map(item => (
-              <Menu {...item} />
-            ))}
-          </div>
-        </>
+        <div className='flex flex-col items-stretch'>
+          <Banner {...data} />
+          <span className='text-lg text-gray-dark font-semibold p-4 my-4'></span>
+          {itemsArray.map(item => (
+            <Menu {...item} key={item.id} />
+          ))}
+        </div>
       )}
     </div>
   );
