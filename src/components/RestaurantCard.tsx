@@ -71,7 +71,7 @@ const RestaurantCard = ({
           <span>{lastMileTravelString}</span>
         </div>
         <div className='hidden md:block text-brown text-sm border-[#e9e9eb] border-t pt-3.5 mt-3.5'>
-          {aggregatedDiscountInfo.shortDescriptionList[0].meta}
+          {aggregatedDiscountInfo?.shortDescriptionList[0].meta}
         </div>
         <div className='quick hidden md:block text-cyan text-[13px] font-semibold text-center border-[#e9e9eb] border-t pt-3.5 mt-3'>
           QUICK VIEW

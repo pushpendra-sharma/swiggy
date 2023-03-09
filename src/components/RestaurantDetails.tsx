@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { addItem, removeItem } from '../redux/features/cart/cartSlice';
 import { fetchRestaurantDetails } from '../redux/features/restaurantDetails/restaurantDetailsSlice';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { MENU_ITEM, RESTAURANT_DETAILS } from '../utils/types';
+import { MENU_ITEM } from '../utils/types';
 import { Banner, Menu, ShimmerMenu, ShimmerBanner } from './';
 
 const RestaurantDetails = () => {
@@ -12,17 +13,20 @@ const RestaurantDetails = () => {
     state => state.restaurantDetails
   );
 
+  const [menuItems, seMenuItems] = useState<MENU_ITEM[]>([]);
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
+  const fetchDetails = (id: string) => {
     dispatch(fetchRestaurantDetails(id));
+
+    if (isSuccess && data) {
+      seMenuItems(Object.values(data.menu.items));
+    }
+  };
+
+  useEffect(() => {
+    fetchDetails(id);
   }, []);
-
-  let itemsArray: MENU_ITEM[] = [];
-
-  if (isSuccess && data) {
-    itemsArray = Object.values(data.menu.items);
-  }
 
   return (
     <div className='pt-20 mx-0 px-0 py-2 sm:mx-4 sm:px-4 md:px-12 md:mx-12 lg:px-24 lg:mx-24 xl:px-36 xl:mx-36'>
@@ -40,8 +44,13 @@ const RestaurantDetails = () => {
         <div className='flex flex-col items-stretch'>
           <Banner {...data} />
           <span className='text-lg text-gray-dark font-semibold p-4 my-4'></span>
-          {itemsArray.map(item => (
-            <Menu {...item} key={item.id} />
+          {menuItems.map(item => (
+            <Menu
+              {...item}
+              key={item.id}
+              addToCart={() => dispatch(addItem(item))}
+              removeFromCart={() => dispatch(removeItem(item))}
+            />
           ))}
         </div>
       )}

@@ -2,7 +2,7 @@
 // export type MENU1 = typeof menu;
 
 export interface MENU_ITEM {
-  id: number;
+  id: string;
   name: string;
   category: string;
   description: string;
