@@ -104,3 +104,28 @@ export interface GET_RESTAURANT_LIST_API_RESPONSE {
     }[];
   };
 }
+
+export interface GET_SEARCH_QUERY_API_RESPONSE {
+  data: {
+    query: string;
+    suggestions: SUGGESTION[];
+  };
+}
+
+export interface SUGGESTION {
+  text: string;
+  highlightedText: string;
+  type: string;
+  tagToDisplay: string;
+  cloudinaryId: string;
+  tagToDisplayColor: string;
+  cta: {
+    text: string;
+    type: string;
+    link: string;
+  };
+  category: string;
+  categoryColor: string;
+  subCategory: string;
+  subCategoryColor: string;
+}

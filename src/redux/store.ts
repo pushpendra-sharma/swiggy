@@ -3,6 +3,7 @@ import appSlice from './features/app/appSlice';
 import cartSlice from './features/cart/cartSlice';
 import restaurantSlice from './features/restaurants/restaurantSlice';
 import restaurantDetailsSlice from './features/restaurantDetails/restaurantDetailsSlice';
+import searchSlice from './features/search/searchSlice';
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     cart: cartSlice,
     restaurants: restaurantSlice,
     restaurantDetails: restaurantDetailsSlice,
+    search: searchSlice,
   },
 });
 
@@ -19,4 +21,3 @@ export type RootState = ReturnType<typeof store.getState>;
 
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;
-

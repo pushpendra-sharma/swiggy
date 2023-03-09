@@ -12,3 +12,5 @@ export const GET_ALL_RESTAURANT_URL =
 
 export const GET_RESTAURANT_DETAIL_URL =
   '/menu/v4/full?lat=28.52572220267605&lng=77.39057801663876&menuId=';
+
+export const SEARCH_URL = `/restaurants/search/suggest?lat=28.5770877&lng=77.3417748&str=`;
