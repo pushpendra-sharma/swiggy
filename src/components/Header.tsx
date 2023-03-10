@@ -1,13 +1,18 @@
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
-import Address from './Address';
-import Title from './Title';
+import { Address, Modal, Title } from '.';
+import { closeModal } from '../redux/features/app/appSlice';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 
 const Header = () => {
+  const dispatch = useAppDispatch();
+  const isModalOpen = useAppSelector(state => state.app.isModalOpen);
+
   return (
     <header className='p-4 md:px-8 lg:px-12 fixed top-0 w-full z-10 bg-white shadow'>
       <div className='mx-0 sm:mx-4 md:mx-8 lg:mx-16 flex gap-4 items-center justify-between'>
         <Title />
-        <Address />
+        <Address name='Home' location='Sector-1, Noida, U.P.' />
         <ul className='flex justify-between shrink items-center gap-8 text-gray-medium'>
           <li className=''>
             <Link to='search'>
@@ -50,6 +55,15 @@ const Header = () => {
             </Link>
           </li>
         </ul>
+        {isModalOpen &&
+          createPortal(
+            <Modal
+              onClose={() => dispatch(closeModal())}
+              title=''
+              description=''
+            />,
+            document.body
+          )}
       </div>
     </header>
   );

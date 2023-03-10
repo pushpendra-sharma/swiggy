@@ -5,11 +5,13 @@ import { CARD } from '../../../utils/types';
 interface AppState {
   location: Object;
   profile: Object;
+  isModalOpen: boolean;
 }
 
 const initialState: AppState = {
   location: {},
   profile: {},
+  isModalOpen: false,
 };
 
 export const appSlice = createSlice({
@@ -19,9 +21,15 @@ export const appSlice = createSlice({
     setLocation: (state, action) => {
       state.location = action.payload;
     },
+    closeModal: state => {
+      state.isModalOpen = false;
+    },
+    openModal: state => {
+      state.isModalOpen = true;
+    },
   },
 });
 
-export const { setLocation } = appSlice.actions;
+export const { closeModal, openModal, setLocation } = appSlice.actions;
 
 export default appSlice.reducer;
