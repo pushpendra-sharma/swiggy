@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchQueryResult } from '../redux/features/search/searchSlice';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
-
-type SEARCH_PROPS = {
-  hint: string;
-  callback: () => void;
-};
+import { Suggestions } from './';
 
 const Search = () => {
   const [query, setQuery] = useState('');
@@ -14,14 +10,12 @@ const Search = () => {
   const data = useAppSelector(state => state.search.data);
   const dispatch = useAppDispatch();
 
-  const suggestions = data.find(item => item.query === query)?.suggestions;
-
-  const fetchSuggestions = (text: string) => {
-    dispatch(fetchQueryResult(text));
-  };
+  const suggestions = data[query];
 
   useEffect(() => {
-    const timer = setTimeout(() => fetchSuggestions(query), 200);
+    const timer = setTimeout(() => {
+      if (query && !data[query]) dispatch(fetchQueryResult(query));
+    }, 200);
 
     return () => {
       clearTimeout(timer);
@@ -48,12 +42,7 @@ const Search = () => {
             </span>
           )}
         </div>
-        {show && (
-          <ul className='relative py-2 px-4 flex flex-col gap-1 max-h-96 overflow-y-scroll border border-gray-light border-t-0'>
-            {suggestions &&
-              suggestions.map(item => <li className='hover:bg-[#e5e7eb] cursor-pointer' key={item.text}>{item.text}</li>)}
-          </ul>
-        )}
+        {show && <Suggestions data={suggestions} />}
       </div>
     </div>
   );

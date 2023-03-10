@@ -124,6 +124,7 @@ export interface SUGGESTION {
     type: string;
     link: string;
   };
+  metadata: string;
   category: string;
   categoryColor: string;
   subCategory: string;

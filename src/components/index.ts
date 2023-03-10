@@ -19,5 +19,6 @@ export { default as Search } from './Search';
 export { default as ShimmerBanner } from './ShimmerBanner';
 export { default as ShimmerMenu } from './ShimmerMenu';
 export { default as ShimmerRestaurant } from './ShimmerRestaurant';
+export { default as Suggestions } from './Suggestions';
 export { default as Title } from './Title';
 export { default as VegOrNonVeg } from './VegOrNonVeg';

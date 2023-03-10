@@ -1,21 +1,19 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { BASE_URL, SEARCH_URL } from '../../../utils/constants';
-import {
-  SUGGESTION,
-} from '../../../utils/types';
+import { SUGGESTION } from '../../../utils/types';
 
 interface SearchState {
   isLoading: boolean;
   isSuccess: boolean;
   error: {};
-  data: { query: string; suggestions: SUGGESTION[] }[];
+  data: { [propName: string]: SUGGESTION[] };
 }
 
 const initialState: SearchState = {
   isLoading: false,
   isSuccess: false,
   error: {},
-  data: [],
+  data: {},
 };
 
 export const fetchQueryResult = createAsyncThunk(
@@ -56,15 +54,11 @@ export const searchSlice = createSlice({
         state.error = false;
       })
       .addCase(fetchQueryResult.fulfilled, (state, action: SearchAction) => {
-        if (action.payload) {
-          const obj = {
-            query: action.payload.query,
-            suggestions: action.payload.suggestions,
-          };
-          state.data.push(obj);
-        }
+        const { query, suggestions } = action.payload;
+        state.data[query] = suggestions;
         state.isLoading = false;
         state.isSuccess = true;
+        state.error = false;
       })
       .addCase(fetchQueryResult.rejected, (state, action) => {
         state.isLoading = false;
