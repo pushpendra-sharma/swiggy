@@ -1,3 +1,4 @@
+export { default as Accordion } from './Accordion';
 export { default as Address } from './Address';
 export { default as Banner } from './Banner';
 export { default as Body } from './Body';
@@ -12,6 +13,7 @@ export { default as Loader } from './Loader';
 export { default as Modal } from './Modal';
 export { default as Menu } from './Menu';
 export { default as Profile } from './Profile';
+export { default as Question } from './Question';
 export { default as Rating } from './Rating';
 export { default as RestaurantCard } from './RestaurantCard';
 export { default as RestaurantDetails } from './RestaurantDetails';
