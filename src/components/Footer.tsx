@@ -25,14 +25,6 @@ const Footer = () => {
             </div>
           </Link>
         </li>
-        <li>
-          <Link to='instamart'>
-            <div className='flex flex-col items-center gap-[1px]'>
-              <span className='material-symbols-outlined'>storefront</span>
-              <span>Instamart</span>
-            </div>
-          </Link>
-        </li>
         <li className=''>
           <Link to='checkout'>
             <div className='flex flex-col items-center gap-[1px]'>
@@ -46,6 +38,14 @@ const Footer = () => {
             <div className='flex flex-col items-center gap-[1px]'>
               <span className='material-symbols-outlined'>person</span>
               <span>Account</span>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link to='support'>
+            <div className='flex flex-col items-center gap-[1px]'>
+              <span className='material-symbols-outlined'>contact_support</span>
+              <span>Help</span>
             </div>
           </Link>
         </li>
