@@ -1,14 +1,16 @@
+import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App, { appLoader } from './App';
 import {
   Body,
   Checkout,
   Error,
-  Help,
   Profile,
   RestaurantDetails,
   Search,
 } from './components';
+
+const Help = lazy(() => import('./components/Help'));
 
 export const router = createBrowserRouter([
   {

@@ -14,6 +14,7 @@ module.exports = {
         pale: '#E1B055',
       },
       gray: {
+        thin: '#EDF1F7',
         light: '#686B78',
         DEFAULT: '#808080',
         medium: '#3D4152',
@@ -27,6 +28,7 @@ module.exports = {
       green: { DEFAULT: '#48C479', dark: '#3d9b6d' },
       brown: '#8A584B',
       cyan: '#5D8Ed5',
+      blue: `#37718e`,
     },
   },
   plugins: [],
