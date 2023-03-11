@@ -1,10 +1,11 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App, { appLoader } from './App';
 import {
   Body,
   Checkout,
   Error,
+  Loader,
   Profile,
   RestaurantDetails,
   Search,
@@ -29,7 +30,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'support',
-        element: <Help />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Help />
+          </Suspense>
+        ),
       },
       {
         path: 'account',
