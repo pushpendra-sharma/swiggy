@@ -130,3 +130,15 @@ export interface SUGGESTION {
   subCategory: string;
   subCategoryColor: string;
 }
+
+export interface QuestionT {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface HELP {
+  data: {
+    [propName: string]: QuestionT[];
+  };
+}
