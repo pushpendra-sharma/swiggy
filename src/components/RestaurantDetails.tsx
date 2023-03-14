@@ -18,15 +18,17 @@ const RestaurantDetails = () => {
 
   const fetchDetails = (id: string) => {
     dispatch(fetchRestaurantDetails(id));
-
-    if (isSuccess && data) {
-      seMenuItems(Object.values(data.menu.items));
-    }
   };
 
   useEffect(() => {
     fetchDetails(id);
   }, []);
+
+  useEffect(() => {
+    if (isSuccess && data) {
+      seMenuItems(Object.values(data.menu.items));
+    }
+  }, [isSuccess]);
 
   return (
     <div className='pt-20 mx-0 px-0 py-2 sm:mx-4 sm:px-4 md:px-12 md:mx-12 lg:px-24 lg:mx-24 xl:px-36 xl:mx-36'>
