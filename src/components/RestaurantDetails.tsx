@@ -7,7 +7,7 @@ import { MENU_ITEM } from '../utils/types';
 import { Banner, Menu, ShimmerMenu, ShimmerBanner } from './';
 
 const RestaurantDetails = () => {
-  const { id = '' } = useParams();
+  const { id } = useParams();
 
   const { data, isLoading, error, isSuccess } = useAppSelector(
     state => state.restaurantDetails
@@ -21,7 +21,7 @@ const RestaurantDetails = () => {
   };
 
   useEffect(() => {
-    fetchDetails(id);
+    if (id) fetchDetails(id);
   }, []);
 
   useEffect(() => {

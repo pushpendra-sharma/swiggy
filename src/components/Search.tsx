@@ -21,7 +21,6 @@ const Search = () => {
       clearTimeout(timer);
     };
   }, [query]);
-  console.log('::::search:::::');
 
   return (
     <div className='mx-0 px-4 py-2 sm:mx-4 md:px-8 md:mx-8 lg:px-12 lg:mx-16 my-20'>

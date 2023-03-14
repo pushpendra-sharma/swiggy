@@ -16,7 +16,7 @@ const Banner = (props: BANNER_DETAILS) => {
     cuisines,
     address,
     locality,
-    sla: { slaString, lastMileDistanceString },
+    sla,
     offerMeta,
   } = props;
   return (
@@ -27,15 +27,17 @@ const Banner = (props: BANNER_DETAILS) => {
             {name}
           </h2>
           <h3 className='text-sm text-gray overflow-hidden text-ellipsis mb-1'>
-            {cuisines.join(', ')}
+            {cuisines?.join(', ')}
           </h3>
           <div className='text-sm text-gray overflow-hidden text-ellipsis mb-1'>
-            {locality + ', ' + lastMileDistanceString}
+            {locality + ', ' + sla?.lastMileDistanceString}
           </div>
         </div>
         <div className='flex flex-col justify-around p-2 border-gray-light border-[1px] rounded-md text-center shadow'>
-          <Rating rating={avgRating}/>
-          <span className='text-gray text-xs border-t border-gray-light pt-2'>{totalRatingsString}</span>
+          <Rating rating={avgRating} />
+          <span className='text-gray text-xs border-t border-gray-light pt-2'>
+            {totalRatingsString}
+          </span>
         </div>
       </div>
       <div className='flex gap-8'>
@@ -43,7 +45,9 @@ const Banner = (props: BANNER_DETAILS) => {
           <span className='material-symbols-outlined border-2 border-gray rounded-full'>
             timelapse
           </span>
-          <span className='font-semibold text-gray-ultra'>{slaString}</span>
+          <span className='font-semibold text-gray-ultra'>
+            {sla?.slaString}
+          </span>
         </div>
         <div className='flex items-center gap-2'>
           <span className='material-symbols-outlined border-2 border-gray rounded-full'>
@@ -54,10 +58,16 @@ const Banner = (props: BANNER_DETAILS) => {
       </div>
       <div className='py-4'>
         <div className='flex flex-col justify-center p-2 border-gray-light border-[1px] shadow rounded-lg min-w-[200px] max-w-xs'>
-          <span className='font-semibold text-gray'>{offerMeta[0].header}</span>
-          <span className='text-sm text-gray-light font-medium'>
-            {offerMeta[0].coupon_code + ' | ' + offerMeta[0].description}
-          </span>
+          {offerMeta && (
+            <>
+              <span className='font-semibold text-gray'>
+                {offerMeta[0].header}
+              </span>
+              <span className='text-sm text-gray-light font-medium'>
+                {offerMeta[0].coupon_code + ' | ' + offerMeta[0].description}
+              </span>
+            </>
+          )}
         </div>
       </div>
       <div className='py-4 border-b-[1px] border-gray-light'>
