@@ -14,13 +14,14 @@ const Search = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (query && !data[query]) dispatch(fetchQueryResult(query));
+      if (query.length && !data[query]) dispatch(fetchQueryResult(query));
     }, 200);
 
     return () => {
       clearTimeout(timer);
     };
   }, [query]);
+  console.log('::::search:::::');
 
   return (
     <div className='mx-0 px-4 py-2 sm:mx-4 md:px-8 md:mx-8 lg:px-12 lg:mx-16 my-20'>
@@ -34,7 +35,7 @@ const Search = () => {
             value={query}
             autoFocus
             onFocus={() => setShow(true)}
-            onBlur={() => setShow(false)}
+            // onBlur={() => setShow(false)}
           ></input>
           {!show && (
             <span className='material-symbols-outlined font-extralight'>
