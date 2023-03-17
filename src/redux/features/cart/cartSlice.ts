@@ -33,7 +33,9 @@ export const cartSlice = createSlice({
     },
     removeItem: (state, action) => {
       const { id } = action.payload;
-      if (state.items[id]) {
+      if (state.items[id].quantity === 1) {
+        delete state.items[id];
+      } else if (state.items[id]) {
         state.items[id].quantity -= 1;
       } else {
         delete state.items[id];

@@ -43,7 +43,11 @@ const RestaurantDetails = () => {
         </div>
       )}
       {isSuccess && (
-        <div className='flex flex-col items-stretch'>
+        <div className='flex flex-col items-stretch '>
+          <div className='p-4 text-sm flex items-center gap-1 text-blue border border-blue'>
+            <span className='material-symbols-outlined  font-bold'>info</span>
+            <span>Using mock data for all restaurant id, API updated</span>
+          </div>
           <Banner {...data} />
           <span className='text-lg text-gray-dark font-semibold p-4 my-4'></span>
           {menuItems.map(item => (

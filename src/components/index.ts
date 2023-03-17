@@ -3,6 +3,7 @@ export { default as Address } from './Address';
 export { default as Banner } from './Banner';
 export { default as Body } from './Body';
 export { default as Carousel } from './Carousel';
+export { default as CartCard } from './CartCard';
 export { default as Checkout } from './Checkout';
 export { default as Error } from './Error';
 export { default as Filters } from './Filters';
