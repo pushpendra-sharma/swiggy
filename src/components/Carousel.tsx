@@ -12,12 +12,12 @@ const Carousel = () => {
         <div className='relative w-full'>
           <div className='overflow-hidden'>
             <div className='w-full transition-transform ease-in whitespace-nowrap'>
-              <div className='inline-block w-64 mr-12'>
+              {/* <div className='inline-block w-64 mr-12'>
                 <img src={img1} alt='' className='w-full' />
-              </div>
-              <div className='inline-block w-64 mr-12'>
+              </div> */}
+              {/* <div className='inline-block w-64 mr-12'>
                 <img src={img2} alt='' className='w-full' />
-              </div>
+              </div> */}
               <div className='inline-block w-64 mr-12'>
                 <img src={img3} alt='' className='w-full' />
               </div>

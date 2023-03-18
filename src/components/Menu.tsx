@@ -40,19 +40,19 @@ const Menu = (props: Props) => {
           alt='menu-img'
           className='rounded-md w-full'
         />
-        <div className='p-2 z-10 relative bottom-4 w-24 bg-white shadow-md rounded text-green'>
+        <div className='z-10 relative bottom-4 w-24 bg-white shadow-md rounded text-green'>
           {quantityInCart > 0 ? (
-            <div className='flex justify-between font-bold'>
-              <button className='text-gray' onClick={removeFromCart}>
+            <div className='flex justify-between font-bold w-full'>
+              <button className='text-gray py-2 px-4' onClick={removeFromCart}>
                 -
               </button>
-              <span className='mx-2'>{quantityInCart}</span>
-              <button className='' onClick={addToCart}>
+              <span className='py-2'>{quantityInCart}</span>
+              <button className='py-2 px-4' onClick={addToCart}>
                 +
               </button>
             </div>
           ) : (
-            <button className='text-center' onClick={addToCart}>
+            <button className='text-center w-full p-2' onClick={addToCart}>
               ADD
             </button>
           )}
