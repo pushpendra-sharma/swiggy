@@ -28,7 +28,7 @@ const Menu = (props: Props) => {
   const quantityInCart = cartItems[id]?.quantity;
 
   return (
-    <div className='my-2 p-4 flex gap-8 justify-between'>
+    <div className=' px-4 py-8 flex gap-8 justify-between border-t border-gray-light'>
       <div className='flex flex-col gap-1'>
         <VegOrNonVeg isVeg={isVeg ? true : false} />
         <p className='text-gray-medium font-medium'>{name}</p>
@@ -40,7 +40,7 @@ const Menu = (props: Props) => {
           alt='menu-img'
           className='rounded-md w-full'
         />
-        <div className='z-10 relative bottom-4 w-24 bg-white shadow-md rounded text-green'>
+        <div className='relative bottom-4 w-24 bg-white shadow-md rounded text-green'>
           {quantityInCart > 0 ? (
             <div className='flex justify-between font-bold w-full'>
               <button className='text-gray py-2 px-4' onClick={removeFromCart}>

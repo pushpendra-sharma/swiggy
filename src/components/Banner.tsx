@@ -1,3 +1,5 @@
+import { filterMenuType } from '../redux/features/restaurantDetails/restaurantDetailsSlice';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { BANNER_DETAILS } from '../utils/types';
 import Rating from './Rating';
 
@@ -20,8 +22,8 @@ const Banner = (props: BANNER_DETAILS) => {
     offerMeta,
   } = props;
   return (
-    <div className='flex flex-col justify-evenly items-stretch px-4 my-4'>
-      <div className='flex justify-between border-b-[1px] border-gray-light py-4 mb-4'>
+    <div className='flex flex-col justify-evenly items-stretch px-4 mt-2'>
+      <div className='flex justify-between py-4 mb-4'>
         <div className='flex flex-col'>
           <h2 className='text-xl font-semibold text-gray-ultra mb-2 capitalize'>
             {name}
@@ -70,7 +72,7 @@ const Banner = (props: BANNER_DETAILS) => {
           )}
         </div>
       </div>
-      <div className='py-4 border-b-[1px] border-gray-light'>
+      <div className='py-4'>
         <span className='font-semibold text-gray-dark mr-2'>Veg only</span>
         <input type='checkbox' className='font-semibold text-gray-dark'></input>
       </div>
