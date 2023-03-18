@@ -1,5 +1,3 @@
-import { filterMenuType } from '../redux/features/restaurantDetails/restaurantDetailsSlice';
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { BANNER_DETAILS } from '../utils/types';
 import Rating from './Rating';
 

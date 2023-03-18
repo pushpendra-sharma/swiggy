@@ -1,6 +1,5 @@
 import menuImage from '../assets/menu-img.jpg';
-import { addItem, removeItem } from '../redux/features/cart/cartSlice';
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { useAppSelector } from '../redux/hooks';
 import { IMG_CDN_URL } from '../utils/constants';
 import { MENU_ITEM } from '../utils/types';
 import VegOrNonVeg from './VegOrNonVeg';
