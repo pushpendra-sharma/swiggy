@@ -10,8 +10,6 @@ A food order app like swiggy.
 
 **Client:** React, Redux Toolkit, TypeScript, TailwindCSS
 
-**Server:** Node, Express
-
 **Hosted:** Netlify
 
 
@@ -23,6 +21,10 @@ A food order app like swiggy.
 - Restaurant Menu page
 - Lazy loading Help page with Accordion
 - Search using debouncing, caching
+
+
+## Demo
+https://user-images.githubusercontent.com/79936276/226106186-2c854fd7-7dc1-4805-ba1a-ec8ff120faa1.mp4
 
 
 ## Run/Edit Locally
