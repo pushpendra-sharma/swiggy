@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useDebugValue, useEffect, useState } from 'react';
 
 export const useOnline = () => {
   const [isOnline, setIsOnline] = useState(true);
+
+  // to add a label to a custom Hook in devTools
+  useDebugValue(isOnline ? 'Online' : 'Offline');
 
   const handleOnline = () => {
     setIsOnline(true);
@@ -20,6 +23,6 @@ export const useOnline = () => {
       window.removeEventListener('offline', handleOffline);
     };
   }, []);
-  
+
   return isOnline;
 };
