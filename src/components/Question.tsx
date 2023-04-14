@@ -8,22 +8,30 @@ type Props = {
 
 const Question = ({ id, title, description, isOpen, callback }: Props) => {
   return (
-    <div className='py-5 text-gray-ultra md:text-gray-medium border-b border-[#d4d5d9] flex gap-2 justify-between w-full'>
+    <div
+      data-testid='question'
+      className='py-5 text-gray-ultra md:text-gray-medium border-b border-[#d4d5d9] flex gap-2 justify-between w-full'
+    >
       <div className=''>
         <button
+          data-testid='question-title'
           className='md:text-lg text-gray-medium cursor-pointer hover:text-orange text-left'
           onClick={() => callback()}
         >
           {title}
         </button>
         {isOpen && (
-          <p className='text-sm text-gray-light leading-5 mt-2'>
+          <p
+            data-testid='question-description'
+            className='text-sm text-gray-light leading-5 mt-2'
+          >
             {description}
           </p>
         )}
       </div>
       {isOpen ? (
         <span
+          data-testid='expand-less-btn'
           className='material-symbols-outlined cursor-pointer'
           onClick={() => callback()}
         >
@@ -31,6 +39,7 @@ const Question = ({ id, title, description, isOpen, callback }: Props) => {
         </span>
       ) : (
         <span
+          data-testid='expand-more-btn'
           className='material-symbols-outlined cursor-pointer'
           onClick={() => callback()}
         >
